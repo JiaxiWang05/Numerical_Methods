@@ -1,0 +1,118 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\geometry{a4paper, margin=2cm}
+\pagestyle{fancy}
+\fancyhead[L]{Department of Engineering Coursework}
+\fancyhead[R]{Page \thepage\ of 11}
+\fancyfoot[C]{ENGI 2211 Coursework Report}
+
+\title{Engineering Mathematics 2: Probability \& Statistics}
+\author{Your Full Name}
+\date{Academic Year: 2024-2025 \\ Term: Epiphany}
+
+\begin{document}
+
+% Title Page
+\maketitle
+
+\vspace{1cm}
+\noindent \textbf{Time Required:} Approximately 100 hours, including lectures, workshops, and problem sheets.
+
+\vspace{0.5cm}
+\noindent \textbf{Deadline for Submission:} Thursday 1 May 2025 at 14:00 hrs \\
+\textbf{Date for Feedback:} After Board of Examiners (BoE)
+
+\vspace{0.5cm}
+\noindent \textbf{Submission Instructions:} \\
+\begin{itemize}
+    \item Upload to Learn Ultra/TURNITIN before the deadline.
+    \item Submissions must be in PDF format; no hard copy is required.
+    \item Use naming convention: SURNAME-Firstname\_ENGI2211-YC.pdf (e.g., BLOGGS-Joanne\_ENGI2211-YC.pdf).
+\end{itemize}
+
+\vspace{0.5cm}
+\noindent \textbf{Format:} \\
+\begin{itemize}
+    \item Minimum 11pt font with 2cm page margins.
+    \item Maximum 7 pages (1 page for portfolio overview, 2 pages each for 3 problems).
+    \item Diagrams must be legible with text no smaller than 8pt.
+\end{itemize}
+
+\vspace{0.5cm}
+\noindent \textbf{Late Submission:} \\
+Summative work received late within five days is capped at the pass mark; submissions more than five days late receive a zero.
+
+\vspace{0.5cm}
+\noindent \textbf{Academic Integrity Guidance:} \\
+The department rigorously investigates all cases of suspected academic dishonesty in line with the Learning and Teaching Handbook, Section 6.2.4.
+
+\vspace{0.5cm}
+\noindent \textbf{Use of Generative AI:} \\
+Generative AI is permitted only for text readability and code efficiency improvements. Document all AI use in an acknowledgment section.
+
+\vspace{1cm}
+\section*{AHEP Learning Outcomes Assessed}
+This assignment assesses the following AHEP Learning Outcomes:
+\begin{itemize}
+    \item \textbf{M1:} Apply knowledge of mathematics, statistics, natural science, and engineering principles to complex problems.
+    \item \textbf{M2:} Formulate and analyze complex problems to reach substantiated conclusions.
+    \item \textbf{M3:} Select and apply computational and analytical techniques to model complex problems, considering their limitations.
+\end{itemize}
+
+\newpage
+
+\section*{Reflective Introduction}
+Provide a one-page reflective introduction demonstrating how you have met the learning outcomes. Include a critical review of how your work relates to engineering, and signpost the assignment sections that showcase this knowledge.
+
+\newpage
+
+\section*{Problem 1: Regression (Concrete)}
+\subsection*{Data Preparation and Transformation}
+Discuss the process of loading the concrete data and transforming it, using water-cement and water-binder ratios, to linearize the relationship between age and compressive strength.
+
+\subsection*{First Regression Analysis}
+Explain and present results from the first regression, showing plots of $b_0$ and $b_1$ versus $\log(\text{Age})$. Provide commentary on the linearity of these relationships.
+
+\subsection*{Second Regression Analysis}
+Discuss the second regression that models $b_0$ and $b_1$ as functions of age. Show scatter plots for Age 14, and compare models using estimated versus calculated parameters.
+
+\subsection*{Model Performance}
+Assess the residuals for transformed and raw data on training and testing sets. Present R-squared values in a table and discuss any patterns in performance and recommendations for improvement.
+
+\newpage
+
+\section*{Problem 2: Statistics (Wind Turbine SCADA Analysis)}
+\subsection*{Data Summary and Initial Scatter Plots}
+Provide a brief summary of the SCADA data. Include scatter plots of wind speed versus energy production for both datasets, and hypothesize potential differences between them.
+
+\subsection*{Binning Analysis}
+Using wind speed bins, compute and plot the mean, standard deviation, and 95\% confidence intervals for each bin. Plot and discuss results, including any insights on turbine performance.
+
+\newpage
+
+\section*{Problem 3: [Insert Problem Title]}
+\subsection*{Data Analysis and Calculations}
+Describe the approach to solve Problem 3, including any data preparation steps, and computations necessary for your analysis.
+
+\subsection*{Results and Discussion}
+Present the results in a clear format, using tables or graphs where helpful. Discuss implications of findings in relation to the problem objectives.
+
+\newpage
+
+\section*{Conclusion}
+Summarize the key insights and learning outcomes achieved through this coursework. Discuss how the analytical methods applied reinforce engineering principles and potential real-world implications.
+
+\newpage
+
+\section*{References}
+Provide full references in IEEE or Harvard style, ensuring all sources used for data, theory, and background are properly cited.
+
+\section*{Acknowledgments}
+Detail any use of generative AI tools, including specific sections of the report or code where these tools were used.
+
+\end{document}
