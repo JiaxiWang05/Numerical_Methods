@@ -1,0 +1,132 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath, amssymb, booktabs, graphicx, float, listings, hyperref, fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{Department of Engineering Coursework}
+\fancyhead[R]{ENGI 2211: Numerical Methods}
+\fancyfoot[C]{Page \thepage\ of 5}
+
+\title{\textbf{ENGI 2211: Engineering Mathematics 2} \\ Numerical Methods Coursework}
+ 
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}
+This report explores numerical methods in engineering, focusing on quadrature rules, composite trapezoidal integration, and solving hyperbolic partial differential equations (PDEs). MATLAB implementations are discussed, and results are presented for Gauss-Legendre quadrature, composite trapezoidal rules, and analytical and numerical solutions for hyperbolic PDEs. The report concludes with engineering applications of these methods.
+
+\section{Introduction}
+Numerical methods are essential in solving engineering problems where analytical solutions are impractical. This coursework includes:
+\begin{itemize}
+    \item Implementing Gauss-Legendre quadrature rules.
+    \item Extending the composite trapezoidal rule for double integrals.
+    \item Solving hyperbolic PDEs analytically and numerically.
+\end{itemize}
+
+\section{Methods and Implementation}
+\subsection{Gauss-Legendre Quadrature Rules}
+The Gauss-Legendre quadrature approximates:
+\[
+\int_{-1}^1 f(x) dx \approx \sum_{i=1}^n f(x_i) w_i,
+\]
+where $x_i$ are nodes and $w_i$ are weights. The function \texttt{gauss.m} implements these rules:
+\begin{lstlisting}[language=Matlab, caption={Gauss-Legendre Implementation}, frame=single]
+function S = gauss(rule, f)
+    % Gauss-Legendre quadrature implementation
+end
+\end{lstlisting}
+
+\subsection{Composite Trapezoidal Rule}
+This rule approximates double integrals as:
+\[
+\int_a^b \int_c^d f(x, y) \, dy \, dx \approx \sum_{i=1}^n \sum_{j=1}^m f(x_i, y_j).
+\]
+Implemented in \texttt{double\_trap\_rule.m}:
+\begin{lstlisting}[language=Matlab, caption={Composite Trapezoidal Rule Implementation}, frame=single]
+function S = double_trap_rule(f, x, n, y, m)
+    % Composite trapezoidal rule for double integrals
+end
+\end{lstlisting}
+
+\subsection{Analytical Solution for Hyperbolic PDEs}
+The analytical solution to the PDE $u_{tt} = c^2 u_{xx}$ is derived using separation of variables. The function \texttt{hyperbolic\_analytical.m} computes:
+\begin{lstlisting}[language=Matlab, caption={Hyperbolic Analytical Solution}, frame=single]
+function u = hyperbolic_analytical(x, t, L, c, A, B)
+    % Analytical solution for hyperbolic PDE
+end
+\end{lstlisting}
+
+\subsection{Numerical Solution for Hyperbolic PDEs}
+The finite difference method discretizes the PDE as:
+\[
+u_{i,j+1} = \text{discretized terms based on initial and boundary conditions}.
+\]
+Implemented in \texttt{fdhyperbolic\_neumann.m}:
+\begin{lstlisting}[language=Matlab, caption={Numerical Hyperbolic Solution}, frame=single]
+function [x, t, u] = fdhyperbolic_neumann(a, b, n, T, m, c, f, g)
+    % Numerical solution for hyperbolic PDE
+end
+\end{lstlisting}
+
+\section{Results and Discussion}
+\subsection{Gauss-Legendre Quadrature Results}
+\begin{table}[H]
+\centering
+\caption{Gauss-Legendre Results}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$f(x)$ & Rule 1 & Rule 2 & Rule 3 & Error 1 & Error 2 & Error 3 \\ \midrule
+$x$    & ...    & ...    & ...    & ...     & ...     & ...     \\
+$x^2$  & ...    & ...    & ...    & ...     & ...     & ...     \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Composite Trapezoidal Rule Results}
+\begin{table}[H]
+\centering
+\caption{Composite Trapezoidal Rule Results}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$n = m$ & $f(x, y) = 1$ & $f(x, y) = xy$ & $f(x, y) = \sin(\pi x) \sin(\pi y)$ \\ \midrule
+1       & ...          & ...           & ...                               \\
+5       & ...          & ...           & ...                               \\
+10      & ...          & ...           & ...                               \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Analytical and Numerical Solution Comparison}
+\begin{table}[H]
+\centering
+\caption{Hyperbolic Problem Solutions}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$t$ & $x$ & $u_{\text{ref}}$ & $u_{\text{num}}$ \\ \midrule
+... & ... & ...              & ...              \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Engineering Applications}
+These numerical methods are widely used in:
+\begin{itemize}
+    \item Modeling heat transfer in materials.
+    \item Analyzing wave propagation in physics.
+    \item Solving structural stability problems in engineering.
+\end{itemize}
+
+\section{Conclusion}
+This report demonstrates the implementation of numerical methods in solving complex engineering problems. The results validate the accuracy and utility of Gauss-Legendre quadrature, composite trapezoidal rule, and hyperbolic PDE solutions.
+
+\section*{References}
+\begin{itemize}
+    \item MATLAB Documentation
+    \item Relevant textbooks and course materials
+\end{itemize}
+
+\section*{Acknowledgments}
+The use of generative AI tools for code efficiency and text readability is acknowledged.
+
+\end{document}
