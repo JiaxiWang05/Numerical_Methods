@@ -1,3 +1,8 @@
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
+
 Here is a detailed explanation of the `trap_rule` function. This function numerically computes the integral of a given function \( f(x) \) over a specified interval \([a, b]\) using the **Trapezoidal Rule**. The rule divides the interval into smaller subintervals (panels) and approximates the area under the curve as trapezoids.
 
 ---
