@@ -1,125 +1,140 @@
-To make formulas appear in a GitHub README file, you have a few options. Here's a detailed explanation of each method:
+Here is a detailed explanation of the `trap_rule` function. This function numerically computes the integral of a given function \( f(x) \) over a specified interval \([a, b]\) using the **Trapezoidal Rule**. The rule divides the interval into smaller subintervals (panels) and approximates the area under the curve as trapezoids.
 
 ---
 
-## **1. Plain Text (No Rendering)**
+## **Purpose**
 
-GitHub does not natively render LaTeX or MathJax in `.md` files. You can write equations in plain text, but they won't look formatted:
+The purpose of this function is to evaluate an integral numerically. It is particularly useful when:
+- An analytical solution is difficult or impossible to compute.
+- You only have access to the function values at specific points.
 
-Example in Markdown:
-```markdown
-The formula for the Trapezoidal Rule is:
+---
 
-S = (h / 2) * sum(f(x_i-1) + f(x_i))
+## **Trapezoidal Rule**
+
+The Trapezoidal Rule approximates the integral of a function by dividing the interval \([a, b]\) into \( n \) panels (subintervals). Each panel forms a trapezoid, and the area of the trapezoid is calculated as:
+\[
+\text{Area of one trapezoid} = \frac{\text{Base Length} \cdot (\text{Height}_1 + \text{Height}_2)}{2}
+\]
+Where:
+- The base length is the step size \( h = \frac{b-a}{n} \).
+- The heights are the function values at the endpoints of each subinterval.
+
+The total integral is the sum of the areas of all trapezoids.
+
+---
+
+## **Inputs and Outputs**
+
+### **Inputs**
+1. **`f`**: The function to integrate, provided as a function handle (e.g., `@sin`).
+2. **`x`**: A 2-element vector specifying the limits of integration \([a, b]\).
+3. **`n`**: The number of panels (subintervals) into which the interval \([a, b]\) is divided.
+
+### **Output**
+- **`S`**: The numerical approximation of the integral using the Trapezoidal Rule.
+
+---
+
+## **Code Breakdown**
+
+### 1. **Step Size Calculation**
+```matlab
+h = (x(2)-x(1))/n;
 ```
-
-How it appears on GitHub:
-> The formula for the Trapezoidal Rule is:  
-> \( S = (h / 2) * \sum(f(x_{i-1}) + f(x_i)) \)
+- **Purpose**: Calculate the step size \( h \), which determines the width of each panel.
+- **Formula**: \( h = \frac{b-a}{n} \), where:
+  - \( a = x(1) \): Start of the integration interval.
+  - \( b = x(2) \): End of the integration interval.
+  - \( n \): Number of panels.
 
 ---
 
-## **2. Use GitHub Pages (Enable MathJax or KaTeX)**
-
-If you are hosting your project using GitHub Pages, you can enable LaTeX rendering with MathJax or KaTeX by adding configuration to your Jekyll `_config.yml` file.
-
-### Steps:
-1. **Enable Jekyll and Math Rendering**:
-   Add the following to `_config.yml`:
-   ```yaml
-   markdown: kramdown
-   kramdown:
-     math_engine: mathjax
-   ```
-
-2. **Write LaTeX in Markdown**:
-   Use `$$...$$` for block math or `$...$` for inline math.
-
-Example in Markdown:
-```markdown
-The formula for the Trapezoidal Rule is:
-
-$$ S = \frac{h}{2} \sum_{i=1}^{n} \left( f(x_{i-1}) + f(x_i) \right) $$
+### 2. **Defining Panel Boundaries**
+```matlab
+xim1 = x(1)+(0:n-1)*h;
+xi = x(1)+(1:n)*h;
 ```
+- **Purpose**: Compute the \( x \)-coordinates of the panel boundaries.
+- \( \text{xim1} \): The starting points of each subinterval, including \( a \) and excluding \( b \).
+- \( \text{xi} \): The ending points of each subinterval, including \( b \) and excluding \( a \).
 
-How it appears on a GitHub Pages site:
-> \( S = \frac{h}{2} \sum_{i=1}^{n} \left( f(x_{i-1}) + f(x_i) \right) \)
+#### Example:
+If \( [a, b] = [0, \pi] \) and \( n = 3 \):
+- \( h = \frac{\pi - 0}{3} = \frac{\pi}{3} \).
+- \( \text{xim1} = [0, \frac{\pi}{3}, \frac{2\pi}{3}] \).
+- \( \text{xi} = [\frac{\pi}{3}, \frac{2\pi}{3}, \pi] \).
 
 ---
 
-## **3. Render Using Images**
-
-If you cannot use MathJax, you can generate equations as images using tools like LaTeX or online equation editors, then embed them in your README.
-
-### Steps:
-1. Use an online tool like [https://www.codecogs.com/latex/eqneditor.php](https://www.codecogs.com/latex/eqneditor.php) to generate an equation image.
-2. Save the image or use its hosted link.
-3. Embed it in your README with Markdown:
-
-Example:
-```markdown
-The formula for the Trapezoidal Rule is:
-
-![Trapezoidal Rule](https://latex.codecogs.com/png.latex?S%20%3D%20%5Cfrac%7Bh%7D%7B2%7D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Cleft(%20f(x_%7Bi-1%7D)%20%2B%20f(x_i)%20%5Cright))
+### 3. **Function Values at Panel Boundaries**
+```matlab
+fim1 = f(xim1);
+fi = f(xi);
 ```
+- **Purpose**: Evaluate the function \( f(x) \) at the boundaries of each panel:
+  - \( \text{fim1} = f(\text{xim1}) \): Function values at the starting points.
+  - \( \text{fi} = f(\text{xi}) \): Function values at the ending points.
 
-How it appears on GitHub:
-![Trapezoidal Rule](https://latex.codecogs.com/png.latex?S%20%3D%20%5Cfrac%7Bh%7D%7B2%7D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Cleft(%20f(x_%7Bi-1%7D)%20%2B%20f(x_i)%20%5Cright))
-
----
-
-## **4. Use a README Generator Supporting Math**
-
-If you're using a Jupyter Notebook or a tool like `pandoc`, you can write your README with LaTeX equations and convert it to a Markdown file.
-
-### Steps:
-1. Write your README with equations in Markdown:
-   ```markdown
-   The formula for the Trapezoidal Rule is:
-
-   $$ S = \frac{h}{2} \sum_{i=1}^{n} \left( f(x_{i-1}) + f(x_i) \right) $$
-   ```
-2. Convert it to GitHub-compatible Markdown:
-   Use a tool like `pandoc`:
-   ```bash
-   pandoc README.md -o README.github.md
-   ```
-   This ensures compatibility with GitHub rendering.
+#### Example:
+If \( f(x) = \sin(x) \), \( [a, b] = [0, \pi] \), and \( n = 3 \):
+- \( \text{fim1} = [\sin(0), \sin(\frac{\pi}{3}), \sin(\frac{2\pi}{3})] = [0, \frac{\sqrt{3}}{2}, \frac{\sqrt{3}}{2}] \).
+- \( \text{fi} = [\sin(\frac{\pi}{3}), \sin(\frac{2\pi}{3}), \sin(\pi)] = [\frac{\sqrt{3}}{2}, \frac{\sqrt{3}}{2}, 0] \).
 
 ---
 
-## **5. Alternative: Use KaTeX Rendering**
-
-KaTeX is another lightweight option for rendering LaTeX equations. If you're embedding a static README for documentation (e.g., on GitHub Pages), you can include KaTeX JavaScript in your project:
-
-```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/contrib/auto-render.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    renderMathInElement(document.body);
-});
-</script>
+### 4. **Trapezoidal Rule Implementation**
+```matlab
+S = sum((fim1 + fi)*h/2);
 ```
+- **Purpose**: Compute the sum of the areas of all trapezoids.
+- **Formula**:
+  \[
+  S = \sum_{i=1}^{n} \frac{h}{2} \cdot \left[ f(x_{i-1}) + f(x_i) \right]
+  \]
+- Here:
+  - \( h/2 \): Common factor representing the width of each trapezoid divided by 2.
+  - \( \text{fim1} + \text{fi} \): Sum of the heights (function values) of each trapezoid.
+  - `sum(...)`: Adds up the contributions of all trapezoids.
 
-Then write:
-```markdown
-The formula for the Trapezoidal Rule is:
-
-\( S = \frac{h}{2} \sum_{i=1}^{n} \left( f(x_{i-1}) + f(x_i) \right) \)
-```
+#### Example:
+Using the sine function example:
+\[
+S = \frac{\pi}{3} \cdot \frac{1}{2} \cdot \left[ (0 + \frac{\sqrt{3}}{2}) + (\frac{\sqrt{3}}{2} + \frac{\sqrt{3}}{2}) + (\frac{\sqrt{3}}{2} + 0) \right]
+\]
 
 ---
 
-## Summary Table of Options
+## **Usage Example**
+```matlab
+S = trap_rule(@sin, [0, pi], 10);
+```
+- **Inputs**:
+  - Function: \( \sin(x) \).
+  - Interval: \([0, \pi]\).
+  - Panels: \( n = 10 \).
+- **Output**:
+  - `S` will be a numerical approximation of:
+    \[
+    \int_0^\pi \sin(x) \, dx = 2
+    \]
 
-| Method                | Pros                                     | Cons                                        |
-|-----------------------|------------------------------------------|---------------------------------------------|
-| **Plain Text**         | Works everywhere                        | Not visually appealing                     |
-| **GitHub Pages + MathJax** | Full LaTeX support, elegant equations  | Requires GitHub Pages configuration        |
-| **Images**             | Always works, no setup required         | Static, not easily editable                |
-| **Markdown + Pandoc**  | Portable, good for local/online use      | Requires external conversion tools         |
-| **KaTeX**              | Lightweight, elegant rendering          | Requires hosting a custom site             |
+---
 
-Choose the method that best fits your project and deployment needs. For the simplest approach, use **Plain Text** or **Images**. For advanced documentation, **GitHub Pages with MathJax** is ideal.
+## **Key Points**
+1. **Advantages**:
+   - Simple to implement.
+   - Works well for smooth functions over small intervals.
+
+2. **Limitations**:
+   - The Trapezoidal Rule is only **first-order accurate**. The error decreases proportionally to \( h^2 \) (the square of the step size).
+   - It may not perform well for functions with significant curvature or discontinuities.
+
+3. **Efficiency**:
+   - The use of vectorized operations (`fim1`, `fi`, and `sum`) ensures the function runs efficiently in MATLAB.
+
+---
+
+## **Contact**
+For questions or clarifications, contact **Stefano Giani**:  
+📧 **stefano.giani@durham.ac.uk**  
