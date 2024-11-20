@@ -88,7 +88,4 @@ This coursework is part of the ENGI 2211 module and focuses on implementing and 
 
 ---
 
-## Acknowledgments
-Any use of generative AI must be acknowledged, as per module guidelines. Include a section in your report for this purpose.
-
-For additional details, refer to the coursework brief provided.
+ 
