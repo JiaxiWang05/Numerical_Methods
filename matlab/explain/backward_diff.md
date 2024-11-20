@@ -87,8 +87,7 @@ gradient = (F(x) - F(x - h)) / h;
 
 ---
  
-
-This layout ensures readability and compatibility with GitHub's Markdown renderer. The formulas are written in plain text to avoid requiring MathJax or special LaTeX rendering, making them universally displayable on GitHub.
+ 
 ### **Function Purpose**
 The function `backward_diff` computes the numerical gradient (derivative) of a given function \( F \) at a specific point \( x \) using the **backward difference method**. This method approximates the derivative by considering the difference between the function value at \( x \) and \( x-h \), divided by the step size \( h \).
 
