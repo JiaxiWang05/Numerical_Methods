@@ -1,9 +1,6 @@
 ### Detailed Explanation of the MATLAB Script for the Catenary Problem of a Suspended Bridge Cable
 
-This MATLAB script models and computes the catenary curve for a cable that is part of a suspended bridge. The computation uses the **finite difference method** to solve the second-order differential equation describing the bridge's cable.
-Here is the same README with all equations formatted in **code blocks** to ensure compatibility with GitHub Markdown:
-
----
+This MATLAB script models and computes the catenary curve for a cable that is part of a suspended bridge. The computation uses the **finite difference method** to solve the second-order differential equation describing the bridge's cable. 
 
 # Catenary Problem for a Suspended Bridge Cable
 
