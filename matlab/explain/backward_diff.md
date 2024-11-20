@@ -199,9 +199,8 @@ This uses points \( x \) and \( x-h \) to calculate the slope of the secant line
 #### **Limitations**
 1. **Truncation Error**:
    - The error from the approximation can be expressed as:
-     \[
-     \text{Error} = \frac{h}{2} F''(c), \quad \text{for some } c \in [x-h, x]
-     \]
+ Error = (h / 2) * F''(c), for some c in [x-h, x]
+
    - As \( h \to 0 \), the approximation becomes more accurate, but too small \( h \) introduces **round-off errors** due to finite-precision arithmetic.
 
 2. **Asymmetric Sampling**:
@@ -226,9 +225,7 @@ disp(gradient);
 
 #### Expected Output:
 The approximate gradient using backward difference is:
-\[
-\text{Gradient} \approx \frac{\cos\left(\frac{\pi}{6}\right) - \cos\left(\frac{\pi}{6} - 0.5\right)}{0.5}
-\]
+Gradient ≈ [ cos(π/6) - cos(π/6 - 0.5) ] / 0.5
 
 ---
 
