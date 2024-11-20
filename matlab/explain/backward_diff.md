@@ -1,7 +1,105 @@
 To deeply understand the given MATLAB function `backward_diff`, we will break it down into every detail, analyzing the code's purpose, structure, and why each part exists. 
 
 ---
+To ensure that all formulas, such as \( f'(x) = \lim_{h \to 0} \frac{F(x) - F(x-h)}{h} \), can be displayed correctly in a GitHub README file, here’s how to structure the explanation. Since GitHub Markdown does not natively support MathJax or LaTeX rendering, you need to either:
 
+1. **Use plain text with inline formatting for math.**
+2. **Leverage code blocks for clearer formatting.**
+
+Below is a GitHub-compatible README section for the function, with properly formatted equations and detailed explanation:
+
+---
+
+# `backward_diff` - Backward Difference Gradient
+
+The `backward_diff` function computes the numerical derivative of a given function \( F(x) \) at a specific point \( x \) using the **backward difference method**. This method approximates derivatives by evaluating the function at \( x \) and \( x-h \), where \( h \) is a small step size.
+
+---
+
+## **Mathematical Definition**
+
+The derivative of \( F(x) \) using the backward difference method is approximated as:
+
+```
+f'(x) ≈ (F(x) - F(x - h)) / h
+```
+
+This formula comes from the limit definition of a derivative:
+
+```
+f'(x) = lim (h → 0) [(F(x) - F(x - h)) / h]
+```
+
+Here:
+- \( F(x) \) is the function being differentiated.
+- \( x \) is the point of evaluation.
+- \( h \) is the step size.
+
+---
+
+## **Function Syntax**
+
+```matlab
+gradient = backward_diff(F, x, h)
+```
+
+### **Inputs**
+- `F`: Function handle for the function to differentiate (e.g., `@cos`).
+- `x`: Point where the derivative is evaluated.
+- `h`: Step size for the approximation.
+
+### **Output**
+- `gradient`: The numerical gradient at \( x \) computed using the backward difference method.
+
+---
+
+## **Example Usage**
+
+```matlab
+gradient = backward_diff(@cos, pi/6, 0.1);
+disp(gradient);
+```
+
+For \( F(x) = \cos(x) \), \( x = \frac{\pi}{6} \), and \( h = 0.1 \):
+```
+f'(x) ≈ (cos(pi/6) - cos(pi/6 - 0.1)) / 0.1
+```
+
+---
+
+## **How It Works**
+
+The backward difference formula is implemented as:
+
+```matlab
+gradient = (F(x) - F(x - h)) / h;
+```
+
+### **Step-by-Step Process**
+1. Compute the function value at \( x \): `F(x)`.
+2. Compute the function value at \( x-h \): `F(x-h)`.
+3. Subtract the two values: `F(x) - F(x-h)`.
+4. Divide by the step size \( h \): `(F(x) - F(x-h)) / h`.
+
+---
+
+## **Advantages**
+- **Simplicity**: Easy to implement and requires only two function evaluations (\( F(x) \) and \( F(x-h) \)).
+- **Backward Compatibility**: Useful when future values (\( x+h \)) are unavailable.
+
+---
+
+## **Limitations**
+1. **Accuracy**:
+   - The method introduces **truncation errors**, especially for large \( h \).
+   - Errors decrease as \( h \) becomes smaller, but extremely small \( h \) can cause numerical instability due to floating-point precision limits.
+2. **Asymmetry**:
+   - Only uses backward information (\( x-h \)), unlike **central difference**, which uses symmetric points (\( x+h \) and \( x-h \)).
+
+---
+ 
+
+This layout ensures readability and compatibility with GitHub's Markdown renderer. The formulas are written in plain text to avoid requiring MathJax or special LaTeX rendering, making them universally displayable on GitHub.
 ### **Function Purpose**
 The function `backward_diff` computes the numerical gradient (derivative) of a given function \( F \) at a specific point \( x \) using the **backward difference method**. This method approximates the derivative by considering the difference between the function value at \( x \) and \( x-h \), divided by the step size \( h \).
 
