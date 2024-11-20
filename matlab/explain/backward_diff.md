@@ -93,9 +93,8 @@ The function `backward_diff` computes the numerical gradient (derivative) of a g
 
 #### **Why Use Backward Difference?**
 In numerical differentiation, the derivative of a function \( F \) at \( x \) is defined as:
-\[
-f'(x) = \lim_{h \to 0} \frac{F(x) - F(x-h)}{h}
-\]
+f'(x) = lim (h → 0) [ (F(x) - F(x-h)) / h ]
+
 - The **backward difference method** approximates this by taking a finite (non-zero) step \( h \) backward from \( x \).
 - It is particularly useful when \( F(x) \) is not differentiable symbolically or cannot be expressed analytically, such as data-driven functions or black-box models.
 
