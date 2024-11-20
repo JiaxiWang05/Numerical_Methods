@@ -131,8 +131,7 @@ function gradient = backward_diff( F, x, h )
 % output:  gradient - numerically evaluated gradient by
 %                     backward difference
 %
-% Written by:    Stefano Giani
-%                stefano.giani@durham.ac.uk
+ 
 %
 % Created:       17/11/13
 %
