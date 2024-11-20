@@ -3,17 +3,51 @@
 
 The `bisection` function implements the **bisection method**, a numerical approach to finding roots of a given function \( f(x) \) within a specified interval \([a, b]\).
 
+ 
+### Using Plain Text
+
+```
+c = (a + b) / 2
+f(a) * f(b) < 0
+```
+
 ---
 
+### Example in Markdown for GitHub README
+
+```markdown
+The bisection method uses the following key steps:
+
+1. Compute the midpoint:
+   ```
+   c = (a + b) / 2
+   ```
+
+2. Check the sign condition:
+   ```
+   f(a) * f(b) < 0
+   ```
+   This ensures there is at least one root in the interval \([a, b]\).
+```
+
+---
+
+### Explanation
+
+- `c = (a + b) / 2`: This calculates the midpoint of the interval \([a, b]\).
+- `f(a) * f(b) < 0`: Ensures that \( f(a) \) and \( f(b) \) have opposite signs, indicating a root exists within the interval.
+
+This formatting is readable and works natively in GitHub without requiring additional rendering tools.
 ## **Mathematical Background**
 
 The bisection method relies on the **Intermediate Value Theorem**, which states:
-- If \( f(a) \cdot f(b) < 0 \), then there exists at least one root \( c \) in the interval \([a, b]\), such that \( f(c) = 0 \).
+- If c = (a + b) / 2
+, then there exists at least one root \( c \) in the interval \([a, b]\), such that \( f(c) = 0 \).
 
-The method iteratively reduces the interval \([a, b]\) by evaluating the function at the midpoint \( c = \frac{a+b}{2} \), replacing either \( a \) or \( b \) with \( c \) based on the sign of \( f(c) \).
+The method iteratively reduces the interval \([a, b]\) by evaluating the function at the midpoint $$ c = \frac{a+b}{2} $$ , replacing either \( a \) or \( b \) with \( c \) based on the sign of \( f(c) \).
 
 ### Algorithm Steps
-1. Compute the midpoint \( c = \frac{a+b}{2} \).
+1. Compute the midpoint $$   c = \frac{a+b}{2}   $$.
 2. Evaluate \( f(c) \).
 3. If \( |f(c)| \) is sufficiently small (less than the tolerance), \( c \) is the root.
 4. Otherwise:
