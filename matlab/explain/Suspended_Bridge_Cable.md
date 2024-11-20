@@ -223,12 +223,7 @@ ylabel('Deflection (m)');
 grid on;
 ```
  
----
  
---- 
-
-This ensures all equations are formatted as code blocks, making them readable in a standard GitHub README file.
----
 
 ## **Overview**
 
