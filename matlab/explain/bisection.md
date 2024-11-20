@@ -36,8 +36,7 @@ The bisection method uses the following key steps:
 
 - `c = (a + b) / 2`: This calculates the midpoint of the interval \([a, b]\).
 - `f(a) * f(b) < 0`: Ensures that \( f(a) \) and \( f(b) \) have opposite signs, indicating a root exists within the interval.
-
-This formatting is readable and works natively in GitHub without requiring additional rendering tools.
+ 
 ## **Mathematical Background**
 
 The bisection method relies on the **Intermediate Value Theorem**, which states:
