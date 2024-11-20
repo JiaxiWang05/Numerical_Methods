@@ -140,8 +140,4 @@ Ensure the following functions are implemented and available in the same directo
 2. Run the script to compute numerical derivatives and display the results table.
 
 ---
-
-## Contact
-
-For any questions or issues, please contact **Stefano Giani** at:  
-📧 **stefano.giani@durham.ac.uk**
+ 
