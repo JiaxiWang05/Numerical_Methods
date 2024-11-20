@@ -42,16 +42,10 @@ The exact derivative of `cos(x)` at `x = π/6` is: `f'(π/6) = -0.5`
 Errors are computed as: 
 `Error = |Exact Value - Approximated Value|`
 
+ The exact derivative of `cos(x)` at `x = π/6` is:
 
-### Error Analysis
-- The exact derivative of \( \cos(x) \) at \( x = \pi/6 \) is:
-  \[
-  f'(\pi/6) = -0.5
-  \]
-- Errors are computed as:
-  \[
-  \text{Error} = | \text{Exact Value} - \text{Approximated Value} |
-  \]
+`f'(π/6) = -0.5`
+
 
 ---
 
