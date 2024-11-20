@@ -93,7 +93,8 @@ while n < 1000
    y_old = y;          % Store the old value of y for comparison
    y = f(c);           % Evaluate the function at the midpoint
 ```
-- The midpoint \( c = \frac{a+b}{2} \) is calculated.
+- The midpoint c = (a + b) / 2
+ is calculated.
 - The function \( f(c) \) is evaluated at the midpoint to check its value.
 
 ---
@@ -105,7 +106,10 @@ while n < 1000
    end
 ```
 1. **\( |f(c)| < 1e{-8} \):** If the function value at \( c \) is close enough to zero, \( c \) is accepted as the root.
-2. **\( |y-y_{\text{old}}|/2 < 1e{-8} \):** If the change in \( y \) between iterations is sufficiently small, the process is terminated.
+2. **  stopping condition
+
+|y - y_old| / 2 < 1e-8
+:** If the change in \( y \) between iterations is sufficiently small, the process is terminated.
 
 ---
 
