@@ -1,15 +1,4 @@
-To deeply understand the given MATLAB function `backward_diff`, we will break it down into every detail, analyzing the code's purpose, structure, and why each part exists. 
-
----
-To ensure that all formulas, such as \( f'(x) = \lim_{h \to 0} \frac{F(x) - F(x-h)}{h} \), can be displayed correctly in a GitHub README file, here’s how to structure the explanation. Since GitHub Markdown does not natively support MathJax or LaTeX rendering, you need to either:
-
-1. **Use plain text with inline formatting for math.**
-2. **Leverage code blocks for clearer formatting.**
-
-Below is a GitHub-compatible README section for the function, with properly formatted equations and detailed explanation:
-
----
-
+ 
 # `backward_diff` - Backward Difference Gradient
 
 The `backward_diff` function computes the numerical derivative of a given function \( F(x) \) at a specific point \( x \) using the **backward difference method**. This method approximates derivatives by evaluating the function at \( x \) and \( x-h \), where \( h \) is a small step size.
