@@ -7,13 +7,6 @@ This MATLAB script demonstrates the calculation of numerical derivatives for the
 
 The script computes the derivatives for varying step sizes \( h \), compares the results with the exact derivative (\(-0.5\)), and evaluates the errors.
 
----
-
-## Overview
-
-**Author:** Stefano Giani  
-**Contact:** stefano.giani@durham.ac.uk  
-**Created:** October 8, 2019  
 
 ---
 
