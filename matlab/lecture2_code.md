@@ -28,20 +28,20 @@ The script computes the derivatives for varying step sizes \( h \), compares the
   h = [0.1, 0.05, 0.025, 0.0125, 0.00625, 0.003125]
   \]
 
-### Derivative Approximation Methods
-The script calculates numerical derivatives using:
-1. **Forward Difference**:
-   \[
-   f'(x) \approx \frac{f(x+h) - f(x)}{h}
-   \]
-2. **Backward Difference**:
-   \[
-   f'(x) \approx \frac{f(x) - f(x-h)}{h}
-   \]
-3. **Central Difference**:
-   \[
-   f'(x) \approx \frac{f(x+h) - f(x-h)}{2h}
-   \]
+The exact derivative of `cos(x)` at `x = π/6` is: `f'(π/6) = -0.5`
+
+1. **Forward Difference**: 
+   `f'(x) ≈ (f(x + h) - f(x)) / h`
+
+2. **Backward Difference**: 
+   `f'(x) ≈ (f(x) - f(x - h)) / h`
+
+3. **Central Difference**: 
+   `f'(x) ≈ (f(x + h) - f(x - h)) / (2h)`
+
+Errors are computed as: 
+`Error = |Exact Value - Approximated Value|`
+
 
 ### Error Analysis
 - The exact derivative of \( \cos(x) \) at \( x = \pi/6 \) is:
