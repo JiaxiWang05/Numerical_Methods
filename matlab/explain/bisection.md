@@ -169,5 +169,4 @@ Iteration 2: c = 1.625, f(c) = 0.666
 ...
 Final root approximation: c ≈ 1.5214
 ```
-
-This format ensures compatibility with GitHub Markdown, where equations are represented in plain text, and includes detailed explanations of every part of the function.
+ 
