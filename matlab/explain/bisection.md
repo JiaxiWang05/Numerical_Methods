@@ -1,7 +1,4 @@
-Below is a detailed explanation of the **bisection method** implemented in the MATLAB function `bisection` along with its formatted display for a GitHub README file.
-
----
-
+ 
 # `bisection` - Root-Finding Using the Bisection Method
 
 The `bisection` function implements the **bisection method**, a numerical approach to finding roots of a given function \( f(x) \) within a specified interval \([a, b]\).
