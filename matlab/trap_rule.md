@@ -1,6 +1,4 @@
-Here is the rewritten README file with plain text for formulas to ensure compatibility with GitHub's Markdown rendering:
-
----
+ 
 
 # Numerical Integration Using the Trapezoidal Rule
 
