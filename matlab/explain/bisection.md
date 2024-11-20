@@ -43,10 +43,10 @@ The bisection method relies on the **Intermediate Value Theorem**, which states:
 - If c = (a + b) / 2
 , then there exists at least one root \( c \) in the interval \([a, b]\), such that \( f(c) = 0 \).
 
-The method iteratively reduces the interval \([a, b]\) by evaluating the function at the midpoint $$ c = \frac{a+b}{2} $$ , replacing either \( a \) or \( b \) with \( c \) based on the sign of \( f(c) \).
+The method iteratively reduces the interval \([a, b]\) by evaluating the function at the midpoint c = (a + b) / 2} , replacing either \( a \) or \( b \) with \( c \) based on the sign of \( f(c) \).
 
 ### Algorithm Steps
-1. Compute the midpoint $$   c = \frac{a+b}{2}   $$.
+1. Compute the midpoint    c = \frac{a+b}{2}   
 2. Evaluate \( f(c) \).
 3. If \( |f(c)| \) is sufficiently small (less than the tolerance), \( c \) is the root.
 4. Otherwise:
