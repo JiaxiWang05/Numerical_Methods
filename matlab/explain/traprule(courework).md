@@ -1,5 +1,4 @@
-Here’s a sample `README.md` file you can use for your GitHub repository:
-
+ 
 ```markdown
 # Trapezoidal Rule Integration
 
