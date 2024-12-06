@@ -1,4 +1,5 @@
-function task22() %a double integral over a rectangular region . This rule is an extension of the trapezoidal rule to two dimensions, and it works by dividing the region into smaller rectangles, evaluating the function at each rectangle.s corner and edge, and then applying appropriate weights to compute the integral
+function task22()
+%a double integral over a rectangular region . This rule is an extension of the trapezoidal rule to two dimensions, and it works by dividing the region into smaller rectangles, evaluating the function at each rectangle.s corner and edge, and then applying appropriate weights to compute the integral
 
     S = double_trap_rule(@(x,y)(sin(x)*sin(y)), [0,pi], 10, [0,pi], 10)
      Optionally print the result
