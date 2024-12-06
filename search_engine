@@ -1,0 +1,49 @@
+from PyPDF2 import PdfReader
+
+# List of all the PDF files uploaded
+pdf_files = [
+    "/mnt/data/ENGI 2211 Engineering Mathematics 2 - Numerical Methods (Summative) coursework_v2.pdf",
+    "/mnt/data/Lect12.pdf",
+    "/mnt/data/Lect20.pdf",
+    "/mnt/data/Lect19.pdf",
+    "/mnt/data/Lect16.pdf",
+    "/mnt/data/Lect6.pdf",
+    "/mnt/data/Lect18.pdf",
+    "/mnt/data/Lect2.pdf",
+    "/mnt/data/handouts(1).pdf",
+    "/mnt/data/Lect5.pdf",
+    "/mnt/data/Lect10(1).pdf",
+    "/mnt/data/Lect8.pdf",
+    "/mnt/data/Lect15.pdf",
+    "/mnt/data/Lect9.pdf",
+    "/mnt/data/Lect11.pdf",
+    "/mnt/data/Lect17.pdf",
+    "/mnt/data/Lect13.pdf",
+    "/mnt/data/Lect3.pdf",
+    "/mnt/data/Lect14.pdf",
+    "/mnt/data/Lect1.pdf"
+]
+
+# Extracting text from each PDF
+pdf_text = {}
+for pdf_file in pdf_files:
+    reader = PdfReader(pdf_file)
+    text = ""
+    for page in reader.pages:
+        text += page.extract_text()
+    pdf_text[pdf_file] = text
+
+# Now, let's check for keywords related to double integrals and trapezoidal rule.
+keywords = ["double integral", "composite trapezoidal", "trapezoidal rule", "numerical integration"]
+
+# Checking which documents mention these keywords
+relevant_documents = {}
+for pdf_file, text in pdf_text.items():
+    relevant_docs = []
+    for keyword in keywords:
+        if keyword.lower() in text.lower():
+            relevant_docs.append(keyword)
+    if relevant_docs:
+        relevant_documents[pdf_file] = relevant_docs
+
+relevant_documents
