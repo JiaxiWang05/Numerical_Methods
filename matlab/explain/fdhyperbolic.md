@@ -1,7 +1,4 @@
-Sure! Let's go through both functions in detail and understand their role in solving the same hyperbolic partial differential equation (PDE) in different ways—one analytically using Fourier series (`hyperbolic_analytical.m`) and the other numerically using the finite difference method (`fdhyperbolic.m`).
-
----
-
+ 
 ### 1. **`hyperbolic_analytical.m`**: Analytical Solution Using Fourier Series
 
 This function computes the exact solution to the hyperbolic PDE:
