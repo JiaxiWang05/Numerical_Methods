@@ -122,3 +122,50 @@ This function implements the **finite difference method** (FDM) to solve the sam
 - **`hyperbolic_analytical.m`** provides the exact solution using Fourier series and is typically used for simple cases where an analytical solution is available.
 - **`fdhyperbolic.m`** uses the finite difference method for numerical solutions and can be applied to more complex scenarios.
 - The two functions can be used together to verify the accuracy of numerical methods, study convergence, and analyze errors.
+
+
+Alright, let's explain this in a simple way!
+
+Imagine you’re trying to solve a puzzle where you need to find out how a rope or string moves over time. This puzzle is a **hyperbolic equation**, which is a type of math that helps us understand how things like waves or vibrations move, such as a vibrating guitar string.
+
+### 1. **`hyperbolic_analytical.m`**: The Perfect Solution (Like Magic!)
+
+This is like having a **magic formula** that can tell us exactly how the string moves at any time. It uses a special trick called a **Fourier series** (don’t worry about the big word!) which is just a way of breaking the string's movement into simpler parts, like adding up different waves of movement.
+
+We know:
+- The string starts at a certain position (that's like the first photo of the string when we start the experiment).
+- The string has a certain speed of movement (how fast it shakes or vibrates).
+
+Using this magic formula, we can perfectly predict where the string will be at any time. This is great because it tells us the **exact answer**. It’s like solving the puzzle perfectly!
+
+### 2. **`fdhyperbolic.m`**: The Approximate Solution (Step-by-Step)
+
+Now, sometimes we can’t use the magic formula, or maybe the puzzle is too complicated. That’s when we use a method called **finite differences**. This is like **guessing** the answer step by step, starting with small guesses and getting closer to the right answer as we go.
+
+Here’s how it works:
+- We divide the rope into small parts (like breaking the rope into little pieces) and check how each piece moves over time.
+- We use simple math to make guesses about the movement, based on the neighboring pieces.
+- We repeat this over and over, making better guesses each time.
+
+We use **two rules** to make sure our guesses are okay:
+1. **Initial conditions**: Where does the string start? How fast is it moving?
+2. **Boundary conditions**: What happens at the ends of the string? Does it stay fixed at the ends?
+
+### Why Use Both?
+
+- **Magic formula (`hyperbolic_analytical.m`)**: This is the **perfect solution**, but it can only be used when the problem is simple enough to solve with a formula.
+- **Finite differences (`fdhyperbolic.m`)**: This is more like **making good guesses** when the problem is too complicated or we don’t have a magic formula.
+
+So, we can use both methods together to check if our guesses are good! If our guesses are close to the perfect solution, we know we did a good job.
+
+In simple terms:
+- The **magic formula** tells us exactly what will happen (like a map to guide us).
+- The **finite difference method** lets us **guess step by step** and get closer to the right answer, like following the path and adjusting our steps as we go.
+
+### Example
+
+Imagine you're bouncing a ball on a string:
+- The **magic formula** can tell us exactly how the ball moves.
+- The **finite difference method** can help us guess the ball's movement by looking at small steps and making better guesses.
+
+In the end, both methods help us solve the puzzle of how the string moves!
