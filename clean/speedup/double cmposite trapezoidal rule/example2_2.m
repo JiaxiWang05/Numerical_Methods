@@ -1,0 +1,1 @@
+S = double_trap_rule( @(x,y)(sin(x)*sin(y)), [0,pi], 10, [0,pi], 10 )
