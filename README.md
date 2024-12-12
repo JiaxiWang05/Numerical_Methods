@@ -2,6 +2,9 @@
 
 ## Introduction
 
+Remember to use matlab debugger to speed it up 
+
+
 This coursework is part of the ENGI 2211 module and focuses on implementing and analyzing numerical methods for solving ODEs and PDEs. The tasks involve developing MATLAB codes for Gauss-Legendre quadrature rules, composite trapezoidal rules, and hyperbolic problems. Additionally, analytical and numerical solutions for hyperbolic PDEs are computed and compared.
 
 ---
