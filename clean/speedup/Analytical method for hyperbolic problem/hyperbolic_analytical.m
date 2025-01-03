@@ -41,19 +41,19 @@ function u = hyperbolic_analytical(x, t, L, c, A, B)
     A = A(:);
     B = B(:);
 
-    % Determine number of terms in series
+    % Determine number of terms in series, determined by the longest of A and B. proper indexing for MATLAB
     n_max = max(length(A), length(B)) - 1;
     
     % Create index vector for computations (as column vector)
     n_vector = (0:n_max)';
     
-    % Precompute common terms
+    % Precompute common terms,This computes the eigenvalues  based on the boundary conditions, where  n = 0, 1, 2...
     lambda_n = (2*n_vector + 1) * (pi/(2*L));
     
-    % Precompute trigonometric terms
-    sin_x = sin(lambda_n * x);
-    cos_t = cos(c * lambda_n * t);
-    sin_t = sin(c * lambda_n * t);
+    % Precompute trigonometric terms. These are the terms that will be used in the summation for the final solution. 
+    sin_x = sin(lambda_n * x); %  spatial distribution of the wave, how the wave behaves across the spatial domain.
+    cos_t = cos(c * lambda_n * t); %temporal evolution of the wave, how the wave changes over time.
+    sin_t = sin(c * lambda_n * t); % dynamics of the wave (specifically the velocity or “motion” of the wave). It is responsible for the time-varying behavior of the wave, and the presence of this term is important to match the initial velocity condition
     
     % Pad coefficient vectors with zeros to match maximum length
     A_padded = zeros(n_max + 1, 1);
